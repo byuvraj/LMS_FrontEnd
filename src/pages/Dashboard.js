@@ -7,7 +7,7 @@ const leave = ()=>{
     return (
         <>
         <div className="float-container-top">
-            <EmpSection name="Yuvraj"/>
+            <EmpSection/>
             <Manager/>
         </div>
         <div className="float-container-bottom">

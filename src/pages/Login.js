@@ -1,5 +1,14 @@
-import React from "react";
-const login = ()=>{
+import { Link } from "react-router-dom";
+import  {React} from "react";
+
+
+const login = (props)=>{
+    const tem=sessionStorage.getItem("users");
+    if (tem==null){
+      var jsonObj={id:null,name:"Yuvraj"}
+    }else{
+      jsonObj = JSON.parse(tem);
+    }
     return (
     <form class="container">
       <div clas="row">
@@ -9,18 +18,18 @@ const login = ()=>{
         <div class="col-4">
           <div class="form-group">
             <label for="exampleInputEmail1">Employee Id</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EmployeeId" />
+            <input type="text" defaultValue={jsonObj.empName} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EmployeeId" />
             <small id="emailHelp" class="form-text text-muted"></small>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="********" />
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
           </div>
           <p>
           </p>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <Link to="/dashboard"><button type="submit" class="btn btn-primary">Login</button></Link>
           <space>                    {"     "} </space>
-          <button type="cancel" class="btn btn-primary">Cancel</button>
+          <Link to={"/"}><button type="cancel" class="btn btn-primary">Cancel</button></Link>
         </div>
       </div>
     </form>

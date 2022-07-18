@@ -6,19 +6,26 @@ body {
 h1, h2, p, ul, li {
   font-family: sans-serif;
 }
+h1.welcome{
+  padding: 20;
+  position: relative;
+  top: 60px;
+  left: 40;
+  border-bottom:2px solid white ;
+}
 ul.header li {
   display: inline;
   list-style-type: none;
   margin: 0;
 }
 ul.header {
-  position: fixed;
+  position: relative;
   overflow: hidden;
   right: 30px;
   left: 30px;
   width: 96%; 
-  background-color: #111;
-  top: 0;
+  background-color:#b9d4ff;
+  top: 30px;
   padding: 0;
 }
 ul.header li a {
@@ -45,21 +52,21 @@ ul.header li a {
 
 .float-container-top {
   width: 95%;
-  overflow-x: scroll;
-  padding-left: 50px;
-  padding-top: 30px;
-  margin: 20px 0 0 0;
+  position: relative;
+  top: 20px;
+  left: 10px;
+  margin-top: 20px;
   height: min-content;
-  min-height: 25em;
-  border-bottom: 2px solid black;
+  min-height: 22em;
+  color: black;
 }
 .float-container-bottom {
+  color: black;
+  position: relative;
   width: 95%;
-  left: 50px;
-  padding-left: 50px;
-  margin: 20px 0 0 0;
+  top: 60px;
+  left: 10px;
   min-height: 22em;
-  border-bottom: 2px solid black;
 }
 .float-container-child-employee {
   min-width: 50%;
@@ -90,57 +97,21 @@ ul.header li a {
   border: 2px solid rgb(169, 169, 169);
   background-color: rgb(255, 255, 255);
 }
-.float-child-table {
-  width: 95%;
-  height: auto;
-  max-height: 17em;
-  Overflow-x:scroll;
-  float: left;
-  padding: 20px;
-  margin-left: 1em;
-  margin-right: 5%;
-  border: 2px solid rgb(170, 170, 170);
-  background-color: rgb(255, 255, 255);
-}
-.float-child-table-employee {
-  width: 95%;
-  height: auto;
-  max-height: 15em;
-  Overflow-x:scroll;
-  float: left;
-  padding: 20px;
-  margin-left: 1em;
-  margin-right: 5%;
-  border: 2px solid rgb(170, 170, 170);
-  background-color: rgb(255, 255, 255);
-}
-table{
-  width: 100%;
-  border-collapse: collapse;
-}
 
-td,th{
-  margin: 10px;
-  padding: 10px;
-  border: 4px solid rgb(255, 255, 255);
-}
-td{
-  background-color: #bfd7ff;
-}
-th{
-  background-color: #9cc0fa;
-}
+
+
 .App {
   text-align: left;
-  color: royalblue;
-  border-radius: 12px;
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
   padding: 5px;
+  font-weight: bolder;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 1px;
   margin-left: 1px;
   background-color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: monospace;
   font-weight: lighter;
 }
 

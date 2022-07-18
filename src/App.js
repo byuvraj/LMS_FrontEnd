@@ -13,11 +13,11 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="login" element={<Login />} />
-          <Route path="*" element ={<NoPage />}/>
         </Route>
+        <Route index element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="*" element ={<NoPage />}/>
         <Route path="newleave" element={<NewLeave />} />
       </Routes>
     </BrowserRouter>
