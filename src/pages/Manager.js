@@ -11,7 +11,7 @@ const Manager = (props) => {
     // this useEffect will run once
     // similar to componentDidMount()
     useEffect(() => {
-        fetch("http://localhost:23786/api/managers/")
+        fetch("http://localhost:23787/api/managers")
             .then(res => res.json())
             .then(
                 (result) => {

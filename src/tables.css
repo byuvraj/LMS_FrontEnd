@@ -22,12 +22,12 @@ td,th{
     border-top: 2px solid rgb(255, 255, 255);
 }  
   tr{
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     color: rgb(0, 0, 0);  
 }
   tr:nth-child(odd){
     color: rgb(255, 255, 255);
-    background: #84b9ff;
+    background: #919191;
  }
   .float-child-table {
     width: 95%;

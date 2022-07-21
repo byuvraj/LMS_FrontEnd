@@ -5,12 +5,23 @@ import  {React} from "react";
 const login = (props)=>{
     const tem=sessionStorage.getItem("users");
     if (tem==null){
-      var jsonObj={id:null,name:"Yuvraj"}
+      window.location = "/";
     }else{
-      jsonObj = JSON.parse(tem);
+      var jsonObj = JSON.parse(tem);
     }
+    const handleSubmit =event=>{
+      event.preventDefault();
+      window.location="/dashboard";
+    }
+    const handleKeypress = event => {
+      //it triggers by pressing the enter key
+      if (event.keyCode === 13) {
+        handleSubmit();
+      }
+    };
+    
     return (
-    <form class="container">
+    <form class="container" onKeyPress={handleKeypress}>
       <div clas="row">
         <h1>Leave Manegment System</h1>
       </div>        
@@ -18,8 +29,7 @@ const login = (props)=>{
         <div class="col-4">
           <div class="form-group">
             <label for="exampleInputEmail1">Employee Id</label>
-            <input type="text" defaultValue={jsonObj.empName} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EmployeeId" />
-            <small id="emailHelp" class="form-text text-muted"></small>
+            <input type="text" autoFocus defaultValue={jsonObj.empId} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EmployeeId" />
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
@@ -27,7 +37,7 @@ const login = (props)=>{
           </div>
           <p>
           </p>
-          <Link to="/dashboard"><button type="submit" class="btn btn-primary">Login</button></Link>
+          <button type="submit" onClick={handleSubmit} class="btn btn-primary">Login</button>
           <space>                    {"     "} </space>
           <Link to={"/"}><button type="cancel" class="btn btn-primary">Cancel</button></Link>
         </div>

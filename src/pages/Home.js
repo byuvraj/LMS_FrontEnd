@@ -10,7 +10,7 @@ const Home = (props)=>{
     // this useEffect will run once
     // similar to componentDidMount()
     useEffect(() => {
-        fetch("http://localhost:23786/api/employees/")
+        fetch("http://localhost:23787/api/employees/")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -31,8 +31,6 @@ const Home = (props)=>{
     var tId=0;
     const handleClick = event => {
         Emid=event.currentTarget.id;
-        console.log(Emid);
-        sessionStorage.setItem("Emid",Emid);
         sessionStorage.setItem("users",JSON.stringify(items[Emid]))
       };
     if (error) {
@@ -61,13 +59,7 @@ const Home = (props)=>{
                 ))}
                 
             </table>
-            {items.map((item) => {
-        if (item.empId === Emid) {
-            sessionStorage.setItem("users",JSON.stringify(item));
-        }
-        return null;
-        })
-        } 
+          
             </div>
         );
     }

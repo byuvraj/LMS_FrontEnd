@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import NewLeave from "./pages/ApplyLeave";
+import ApprovalPage from "./pages/ApprovalPage";
 import NoPage from "./pages/NoPage";
 
 
@@ -14,6 +15,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="approval" element={<ApprovalPage />} />
         </Route>
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />

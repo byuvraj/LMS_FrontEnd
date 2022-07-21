@@ -1,10 +1,8 @@
 import React from "react";
-import {Link} from "react-router-dom";
 const EmployeeDetails = (props)=>{
 
     const tem=sessionStorage.getItem("users");
     if (tem==null){
-      alert("Please Login");
       window.location = "/";
     }else{
       var Employee = JSON.parse(tem);
