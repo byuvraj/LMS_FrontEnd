@@ -21,8 +21,6 @@ const leave = ()=>{
             <ReportingEmployees />
         </div>
         </>
-        
-        
         </>
     )
 };

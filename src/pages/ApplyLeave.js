@@ -5,7 +5,8 @@ import {Link} from "react-router-dom"
 const ApplyLeave = () => {
     const [submit, setSubmit] = useState(null);
     const [inputs, setInputs] = useState({});
-
+    var today = new Date(),
+    date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     const tem = sessionStorage.getItem("users");
     if (tem == null) {
         window.location = "/";
@@ -46,7 +47,7 @@ const ApplyLeave = () => {
                 managerId: Employee.managerId,
                 employeeId: Employee.empId,
                 leaveDays: getNumberOfDays(inputs.startDate, inputs.endDate),
-                applyDate: inputs.applyDate,
+                applyDate: date,
                 startDate: inputs.startDate,
                 endDate: inputs.endDate,
                 leaveReason: inputs.leaveReason,
@@ -66,9 +67,6 @@ const ApplyLeave = () => {
                 <h2>New Leave</h2>
                 <div className="row">
                     <div className="col-5">
-                        Apply Date
-                        <input type="date" id="applyDate" defaultValue={Date.now()} onChange={handleChange} className="form-control"></input>
-                        <br></br>
 
                         Start Date: <input type="date" id="startDate" onChange={handleChange} className="form-control"></input>
                         <br></br>

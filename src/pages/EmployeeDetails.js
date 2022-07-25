@@ -12,7 +12,6 @@ const EmployeeDetails = (props)=>{
     
             <div className="float-container-child-employee">
                 <div className="App">
-
                     <h1>My Details Section</h1>
                     <div className="float-container-child-employee-child">
                         <pre>

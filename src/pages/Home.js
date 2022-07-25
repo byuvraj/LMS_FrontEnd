@@ -42,15 +42,23 @@ const Home = (props)=>{
             <div className="table-welcome">
             <h1 >Welcome to Leave Management Application</h1>
             <table >
-                
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Employee Name</th>
+                    <th>Designation</th>
+                    <th></th>
+                </tr>
                 {items.map(item => (
                     
                     <tr >
-                    <td >
-                        {item.empId}
+                    <td>
+                        {tId+1} 
                     </td>
                     <td>
                         {item.empName} 
+                    </td>
+                    <td>
+                        {item.designation}
                     </td>
                     <td > <Link to="login"><button id={tId++} onClick={handleClick}>Login</button></Link>
                     </td>

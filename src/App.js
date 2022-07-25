@@ -15,8 +15,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="approval" element={<ApprovalPage />} />
         </Route>
+        <Route path="approval" element={<ApprovalPage />} />
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="*" element ={<NoPage />}/>
