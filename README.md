@@ -29,4 +29,4 @@ To apply for leave user need to give the reason and dates he want to seek for a 
 A manager can approve or deny the leave with his comment on it for all reporting employees for him to all pending leave requests.
 
 <br/>
-<img alt="Leave Approval page" src="/src/Screenshots/05.ApprovalPage.png"width="100%">
+<img alt="Leave Approval page" src="/src/Screenshots/06.ApprovalPage.png"width="100%">
