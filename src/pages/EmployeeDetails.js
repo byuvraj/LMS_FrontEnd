@@ -9,7 +9,6 @@ const EmployeeDetails = (props)=>{
     }
     return (
         <>
-    
             <div className="float-container-child-employee">
                 <div className="App">
                     <h1>My Details Section</h1>

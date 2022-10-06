@@ -50,8 +50,8 @@ const Home = (props)=>{
                 </tr>
                 {items.map(item => (
                     
-                    <tr >
-                    <td>
+                    <tr key={tId}>
+                    <td >
                         {tId+1} 
                     </td>
                     <td>
