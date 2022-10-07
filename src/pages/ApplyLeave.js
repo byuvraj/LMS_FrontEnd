@@ -37,8 +37,6 @@ const ApplyLeave = () => {
         event.preventDefault();
         // alert(inputs.desc);
 
-
-
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -58,8 +56,6 @@ const ApplyLeave = () => {
             .then(response => response.json())
             .then(data => setSubmit(data.id)).then(window.location="/dashboard");
     }
-
-
 
     return (
         <div className="App">

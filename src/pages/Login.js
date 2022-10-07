@@ -13,22 +13,20 @@ const emailReducer = (state, action) => {
     isValid: false
   }
 };
-const passwdReducer=(state, action)=>{
-  if(action.type === 'USER_PASSWD'){
-    return { value: action.val, isValid: state.value.trim().length>6}
+const passwdReducer = (state, action) => {
+  if (action.type === 'USER_PASSWD') {
+    return { value: action.val, isValid: state.value.trim().length > 6 }
   }
-  if (action.type ==='INPUT_BLUR'){
-    return { value: state.value, isValid: state.value.trim().length>6}
+  if (action.type === 'INPUT_BLUR') {
+    return { value: state.value, isValid: state.value.trim().length > 6 }
   }
 };
-const Login = (props) => {
-  //const [inputPasswd, setInputPasswd] = useState('');
-  // [passwordIsValid, setPasswordIsValid] = useState();
+const Login = () => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   const [emailState, dispatchEmail] = useReducer(emailReducer, { value: '', isValid: null, });
-  const [passwdState,dispatchPasswd]=useReducer(passwdReducer, { value: '', isValid: null,})
-  
+  const [passwdState, dispatchPasswd] = useReducer(passwdReducer, { value: '', isValid: null, })
+
   useEffect(() => {
     console.log('EFFECT RUNNING');
 
@@ -38,27 +36,28 @@ const Login = (props) => {
   }, []);
   const emailChangeHandler = (event) => {
     dispatchEmail({ type: 'USER_INPUT', val: event.target.value });
+
     setFormIsValid(
       event.target.value.includes('@') && passwdState.trim().length > 6
-      );
+    );
   };
 
   const passwordChangeHandler = (event) => {
-    dispatchPasswd({type: 'USER_PASSWD', val: event.target.value})
+    dispatchPasswd({ type: 'USER_PASSWD', val: event.target.value })
 
     setFormIsValid(
-      emailState.isValid&& event.target.value.trim().length > 6
+      emailState.isValid && event.target.value.trim().length > 6
     );
   };
   const validateEmailHandler = () => {
-    dispatchEmail({type: 'INPUT_BLUR'}); //setEmailIsValid(emailState.isValid);
+    dispatchEmail({ type: 'INPUT_BLUR' }); //setEmailIsValid(emailState.isValid);
   };
 
   const validatePasswordHandler = () => {
-    dispatchPasswd({type: 'INPUT_BLUR'}); 
+    dispatchPasswd({ type: 'INPUT_BLUR' });
   };
 
- 
+
   const tem = sessionStorage.getItem("users");
   if (tem == null) {
     window.location = "/";
@@ -89,7 +88,7 @@ const Login = (props) => {
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password"value={passwdState.val} onChange={passwordChangeHandler}onBlur={validatePasswordHandler} class="form-control" id="exampleInputPassword1" placeholder="Password" />
+            <input type="password" value={passwdState.val} onChange={passwordChangeHandler} onBlur={validatePasswordHandler} class="form-control" id="exampleInputPassword1" placeholder="Password" />
           </div>
           <p>
           </p>
