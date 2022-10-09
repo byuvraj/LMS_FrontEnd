@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-import { React, useState, useReducer, useEffect } from "react";
+import { React, useState, useReducer } from "react";
 
 const emailReducer = (state, action) => {
   if (action.type === 'USER_INPUT') {
     return { value: action.val, isValid: action.val.includes('@') };
   }
   if (action.type === 'INPUT_BLUR') {
-    return { value: state.value, isValid: state.value.includes('@') }
+    return { value: state.value, isValid: state.value.includes('@') };
   }
   return {
     value: '',
     isValid: false
-  }
+  };
 };
 const passwdReducer = (state, action) => {
   if (action.type === 'USER_PASSWD') {
@@ -20,6 +20,10 @@ const passwdReducer = (state, action) => {
   if (action.type === 'INPUT_BLUR') {
     return { value: state.value, isValid: state.value.trim().length > 6 }
   }
+  return {
+    value: '',
+    isValid: false
+  }
 };
 const Login = () => {
   const [formIsValid, setFormIsValid] = useState(false);
@@ -27,18 +31,12 @@ const Login = () => {
   const [emailState, dispatchEmail] = useReducer(emailReducer, { value: '', isValid: null, });
   const [passwdState, dispatchPasswd] = useReducer(passwdReducer, { value: '', isValid: null, })
 
-  useEffect(() => {
-    console.log('EFFECT RUNNING');
 
-    return () => {
-      console.log('EFFECT CLEANUP');
-    };
-  }, []);
   const emailChangeHandler = (event) => {
     dispatchEmail({ type: 'USER_INPUT', val: event.target.value });
 
     setFormIsValid(
-      event.target.value.includes('@') && passwdState.trim().length > 6
+      event.target.value.includes('@') && passwdState.isValid
     );
   };
 
@@ -84,7 +82,7 @@ const Login = () => {
         <div class="col-4">
           <div class="form-group">
             <label for="exampleInputEmail1">Employee Id</label>
-            <input type="text" onChange={emailChangeHandler} onBlur={validateEmailHandler} autoFocus defaultValue={jsonObj.empId} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EmployeeId" />
+            <input type="text" onChange={emailChangeHandler} value={emailState.val} onBlur={validateEmailHandler} autoFocus defaultValue={jsonObj.empId} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EmployeeId" />
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
