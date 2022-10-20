@@ -1,5 +1,30 @@
 button{
     text-align: center;
-    border: none;
-    background: none;    
+    border: solid 1px black;
+    border-radius: 2.5px;
+    background: none; 
+    width: 30%;
+    position:  relative;
+    margin-top: 10px;
+    transition: 0.5s; 
+}
+button.invalid:disabled{
+    text-align: center;
+    border: solid 1px red;
+    border-radius: 2.5px;
+    background: none; 
+    width: 30%;
+    position:  relative;
+    margin-top: 10px;
+    transition: 0.5s; 
+}
+button.invalid_left{
+    transition: 0.5s;  
+    border-color: red;
+    transform:translateX(0px);
+}
+button.invalid_right{
+    transition: 0.5s;  
+    border-color: red;
+    transform:translateX(200px);
 }

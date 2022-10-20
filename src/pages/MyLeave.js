@@ -54,7 +54,7 @@ const MyLeave =()=>{
                 {items.map(item => {
                     if(item.employeeId===Employee.empId){
                         return(
-                            <tr >
+                            <tr key={item.leaveId}>
                                 <td >
                                     {item.leaveId}
                                 </td>

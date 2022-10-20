@@ -20,8 +20,9 @@ td,th{
     text-align: center;
     padding: 2px;
     border-top: 2px solid rgb(255, 255, 255);
-}  
-  tr{
+} 
+   
+tr{
     background-color: #ffffff;
     color: rgb(0, 0, 0);  
 }
@@ -29,8 +30,12 @@ td,th{
     color: rgb(255, 255, 255);
     background: #919191;
  }
+ thead{
+  background-color: #000000;
+    color: rgb(255, 255, 255); 
+}
   .float-child-table {
-    width: 95%;
+    width: 90%;
     height: auto;
     max-height: 17em;
     Overflow-x:scroll;
@@ -42,14 +47,14 @@ td,th{
     background-color: rgb(255, 255, 255);
   }
   .float-child-table-employee {
-    width: 95%;
+    width: 90%;
     height: auto;
     max-height: 15em;
     Overflow-x:scroll;
     float: left;
     padding: 20px;
     margin-left: 1em;
-    margin-right: 5%;
+    margin-right: 1%;
     border: 2px solid rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
   }
